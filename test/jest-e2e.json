@@ -1,0 +1,17 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "ss/metric-modelx/(.*)": "<rootDir>/../libs/metric-modelx/src/$1",
+    "ss/metric-modelx": "<rootDir>/../libs/metric-modelx/src"
+  }
+}

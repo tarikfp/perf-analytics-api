@@ -7,7 +7,7 @@ export type MetricDocument = Metric & mongoose.Document;
 @Schema()
 export class Metric {
   @Prop({ default: 0 })
-  ttfp: number;
+  ttfb: number;
 
   @Prop({ default: 0 })
   fcp: number;
@@ -23,6 +23,9 @@ export class Metric {
 
   @Prop({ default: null })
   userAgent: string | null;
+
+  @Prop({ default: null })
+  url: string | null;
 
   @Prop({ type: Date, default: Date.now, required: false })
   createdAt: string;

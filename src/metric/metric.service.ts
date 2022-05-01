@@ -24,9 +24,6 @@ export class MetricService {
    * @returns found metrics
    */
   async getMetricsByDate(startDate: string, endDate: string) {
-    console.log(new Date(startDate));
-    console.log(new Date(endDate));
-
     return this.metricModel.find({
       createdAt: {
         $gte: new Date(startDate),

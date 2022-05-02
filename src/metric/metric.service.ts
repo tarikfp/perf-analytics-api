@@ -26,8 +26,8 @@ export class MetricService {
   async getMetricsByDate(startDate: string, endDate: string) {
     return this.metricModel.find({
       createdAt: {
-        $gte: new Date(startDate),
-        $lte: new Date(endDate),
+        $gte: new Date(Number(startDate)),
+        $lte: new Date(Number(endDate)),
       },
     });
   }

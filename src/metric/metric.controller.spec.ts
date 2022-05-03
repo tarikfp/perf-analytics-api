@@ -9,6 +9,7 @@ import { MetricService } from './metric.service';
 describe('MetricController', () => {
   let controller: MetricController;
   let service: MetricService;
+  console.log('');
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({

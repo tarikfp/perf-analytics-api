@@ -27,12 +27,14 @@ export class MetricService {
     startDate: string,
     endDate: string,
   ): Promise<Metric[]> {
-    return this.metricModel.find({
-      createdAt: {
-        $gte: new Date(Number(startDate)),
-        $lte: new Date(Number(endDate)),
-      },
-    });
+    return this.metricModel
+      .find({
+        createdAt: {
+          $gte: new Date(Number(startDate)),
+          $lte: new Date(Number(endDate)),
+        },
+      })
+      .sort('-createdAt');
   }
 
   /**
@@ -46,13 +48,14 @@ export class MetricService {
     return this.metricModel
       .find()
       .where('createdAt')
-      .gte(new Date(Date.now() - 1000 * 60 * 30).getTime());
+      .gte(new Date(Date.now() - 1000 * 60 * 30).getTime())
+      .sort('-createdAt');
   }
 
   /**
    * @returns all metrics
    */
   async getAllMetrics(): Promise<Metric[]> {
-    return this.metricModel.find();
+    return this.metricModel.find().sort('-createdAt');
   }
 }

@@ -10,7 +10,9 @@ export class MetricController {
   @Post('')
   async createMetrics(@Request() req) {
     const raw = await rawbody(req);
+
     const _rawBody = raw.toString().trim();
+
     return this.metricModelService.createMetrics(
       JSON.parse(_rawBody) as Metric,
     );

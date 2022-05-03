@@ -23,7 +23,10 @@ export class MetricService {
    * @param endDate
    * @returns found metrics
    */
-  async getMetricsByDate(startDate: string, endDate: string) {
+  async getMetricsByDate(
+    startDate: string,
+    endDate: string,
+  ): Promise<Metric[]> {
     return this.metricModel.find({
       createdAt: {
         $gte: new Date(Number(startDate)),
@@ -39,7 +42,7 @@ export class MetricService {
    * @returns latest metrics
    * @description returns latest metrics that are created within last 30 mins
    */
-  async getLatestMetrics() {
+  async getLatestMetrics(): Promise<Metric[]> {
     return this.metricModel
       .find()
       .where('createdAt')
@@ -49,7 +52,7 @@ export class MetricService {
   /**
    * @returns all metrics
    */
-  async getAllMetrics() {
+  async getAllMetrics(): Promise<Metric[]> {
     return this.metricModel.find();
   }
 }

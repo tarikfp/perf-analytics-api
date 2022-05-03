@@ -72,11 +72,11 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "roots": [
-      "<rootDir>/src/",
-      "<rootDir>/libs/"
+      "<rootDir>/src/"
     ],
     "moduleNameMapper": {
-      "^ss/metric-modelx(|/.*)$": "<rootDir>/libs/metric-modelx/src/$1"
+      "^ss/metric-modelx(|/.*)$": "<rootDir>/libs/metric-modelx/src/$1",
+      "raw-body": "<rootDir>/src/__mocks__/raw-body.ts"
     }
   }
 }
